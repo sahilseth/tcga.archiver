@@ -146,3 +146,25 @@ createArchive <- function(mat=mat,disease,center="hms.harvard.edu",platform="Ill
   system(paste("md5sum ", basename(outDir),".tar.gz > ",outDir,".tar.gz.md5",sep=""))
   ## check with QC Live
 }
+
+
+getCGHubStatus <- function(id, by="analysis_id", get="state"){ #get state, analysis_id, both
+  require(XML);require(RCurl)
+  url <- paste("https://cghub.ucsc.edu//cghub/metadata/analysisFull?",by,"=*",id,"*",sep="")
+  ## xml <- system(sprintf("curl -s %s",url),intern=TRUE)
+  xml <- system(sprintf("curl -s %s",url),intern=TRUE)
+  state <- xmlValue(xmlRoot(xmlTreeParse(xml))[["Result"]][["state"]])
+  uuid <- xmlValue(xmlRoot(xmlTreeParse(xml))[["Result"]][["analysis_id"]])
+  filename <- try(xmlValue(xmlRoot(xmlTreeParse(xml))[["Result"]][["files"]][["file"]][["filename"]]))
+  aliquotID <- try(xmlValue(xmlRoot(xmlTreeParse(xml))[["Result"]][["aliquot_id"]]))
+  reason <- try(xmlValue(xmlRoot(xmlTreeParse(xml))[["Result"]][["reason"]]))
+  if(get=="uuid"){
+    ret <- uuid
+  }else if(get=="state"){
+    ret <- state
+  }else if(get=="fileName"){
+    ret <- filename
+  }else if(get=="all" | get=="both")
+    ret <- list(state=state,uuid=uuid,filename=filename,reason=reason,aliquotID=aliquotID)
+  return(ret)
+}
