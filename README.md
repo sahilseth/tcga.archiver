@@ -28,7 +28,7 @@ tsvs = file.path(path.package("tcga.archiver"), "files/TCGA-CN-5356-01A-01D-1431
 
 ## and example sample
 vec <- c(files = tsvs, 
-         NORMALSAMPLEID = "normal-tcga-barcode", NORMALSAMPLEID = "normal-tcga-barcode", 
+         NORMALSAMPLEID = "TCGA-CN-5356-10A-01D-1431", TUMORSAMPLEID = "TCGA-CN-5356-01A-01D-1431", 
          NORMALANALYSISUUID = "normal-cghub-uuid", TUMORANALYSISUUID = "tumor-analysis-uuid" )
 
 out <- get_sdrf_row(vec = vec, dat_level = 3 ,dat_batch = 0 ,dat_rev = 0 ,disease = disease, opt_data = opt_data,
