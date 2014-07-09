@@ -25,7 +25,8 @@ center = "hms.harvard.edu"
 
 
 ## these are the TSV files we upload:
-tsvs = file.path(path.package("tcga.archiver"), "files/TCGA-CN-5356-01A-01D-1431___120412_SN208_0283_AD0V1GACXX---TCGA-CN-5356-10A-01D-1431___120412_SN208_0284_BD0T51ACXX.tsv")
+tsvs = file.path(path.package("tcga.archiver"), 
+  "files/TCGA-CN-5356-01A-01D-1431___120412_SN208_0283_AD0V1GACXX---TCGA-CN-5356-10A-01D-1431___120412_SN208_0284_BD0T51ACXX.tsv")
 
 ## and example sample
 vec <- c(files = tsvs, 
