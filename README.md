@@ -6,8 +6,7 @@ Creating metadata for TCGA lowpass data
 ### Installing this package
 ```
 require(devtools)
-debug(RCurl:::curlPerform)
-devtools:::install_github_single(repo="tcga.archiver", username="sahilseth")
+install_github_single(repo="tcga.archiver", username="sahilseth")
 
 ```
 
