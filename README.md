@@ -17,6 +17,7 @@ dcc_params = file.path(path.package("tcga.archiver"), "files/DCC.params")
 opt_data <- read.delim(dcc_params, sep = "\t", header = TRUE, as.is = TRUE)
 ```
 
+### Make a single SDRF row based on example data
 ```
 file_type = "tsv" ## or vcf for breakdancer
 disease = 'HNSC'
