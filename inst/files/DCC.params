@@ -1,0 +1,28 @@
+param	tsv	vcf
+extName	Extract Name	0	0
+barcode	Comment [TCGA Barcode]	0	0
+labProt	Protocol REF	hms.harvard.edu:labeling:IlluminaHiSeq_DNASeqC:01	hms.harvard.edu:labeling:IlluminaHiSeq_DNASeqC:01
+labNm	Labeled Extract Name	labeling	labeling
+libPrepProt	Protocol REF	hms.harvard.edu:library_preparation:IlluminaHiSeq_DNASeqC:01	hms.harvard.edu:library_preparation:IlluminaHiSeq_DNASeqC:01
+libPrepNm	Assay Name	library_prep	library_prep
+clustGenProt	Protocol REF	hms.harvard.edu:cluster_generation:IlluminaHiSeq_DNASeqC:01	hms.harvard.edu:cluster_generation:IlluminaHiSeq_DNASeqC:01
+clustGenNm	Assay Name	cluster generation	cluster_generation
+dnaSeqProt	Protocol REF	hms.harvard.edu:DNA_Sequencing:IlluminaHiSeq_DNASeqC:01	hms.harvard.edu:DNA_Sequencing:IlluminaHiSeq_DNASeqC:01
+dnaSeqNm	Assay Name	DNA_Sequencing	DNA_Sequencing
+seqAlnProt	Protocol REF	hms.harvard.edu:sequence_alignment:IlluminaHiSeq_DNASeqC:01	hms.harvard.edu:sequence_alignment:IlluminaHiSeq_DNASeqC:01
+seqAlnNm	Assay Name	sequence_alignment	sequence_alignment
+seqRefGenome	Comment [Genome reference]	hg19 (GRCh37)	hg19 (GRCh37)
+seqAlnFile	Comment [Derived Data REF]	0	0
+seqAlnUUID	Comment [UCSC CGHub UUID]	0	0
+seqTcgaInclAnal	Comment [TCGA Include for Analysis]	yes	yes
+seqDataType	Comment [TCGA Data Type]	DNA Sequence-Alignment	DNA Sequence-Alignment
+seqdataLevel	Comment [TCGA Data Level]	Level 1	Level 1
+curProt	Protocol REF	hms.harvard.edu:segmentation:IlluminaHiSeq_DNASeqC:01	hms.harvard.edu:variant_calling:IlluminaHiSeq_DNASeqC:01
+curDatTransName	Data Transformation Name	segmentation	raw
+curFile	Derived Data File	0	0
+curDataType	Comment [TCGA Data Type]	Copy Number-DNASeq	Variant Calling-DNASeq
+curDataLevel	Comment [TCGA Data Level]	Level 3	Level 2
+curTcgaInclAnal	Comment [TCGA Include for Analysis]	yes	yes
+curArchName	Comment [TCGA Archive Name]	0	0
+curFileType	Comment [TCGA File Type]	tsv	vcf
+curFileMD5	Comment [TCGA MD5]	0	0

@@ -1,0 +1,9 @@
+Package: tcga.archiver
+Type: Package
+Title: TCGA Archive Creater (HMS - MDA) WGS sequencing center
+Version: 0.3
+Date: 2014-03-13
+Author: sseth
+Maintainer: Sahil Seth <sahil.seth@me.com>
+Description: Creates toga archives. As of now this is a very bare skeleton.
+License: GPL
