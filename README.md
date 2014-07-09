@@ -7,6 +7,7 @@ Creating metadata for TCGA lowpass data
 ```
 require(devtools)
 install_github("tcga.archiver")
+
 ```
 
 ### Reading in example params
