@@ -12,11 +12,11 @@ get_md5 <- function(file){
          #Windows= {print("I'm a Windows PC.")},
          Linux  = {
            md5sum = strsplit(system(paste("md5sum ",file,sep=""),intern=TRUE)," ")[[1]][1];
-           print("I'm a penguin.")
+           #print("I'm a penguin.")
            },
          Darwin = {
            md5sum = strsplit(system(sprintf("md5 %s", file), intern=TRUE), " = ")[[1]][2]
-                           print("I'm a Mac.")
+           #print("I'm a Mac.")
          }
   )
   return(md5sum)
