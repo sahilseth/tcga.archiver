@@ -6,6 +6,22 @@
 ## Updated: 09/06/2012
 ## Title: This contains the main functions used to compile a archive for DCC submission.
 
+## an os compatible command
+get_md5 <- function(file){
+  switch(Sys.info()[['sysname']],
+         #Windows= {print("I'm a Windows PC.")},
+         Linux  = {
+           md5sum = strsplit(system(paste("md5sum ",file,sep=""),intern=TRUE)," ")[[1]][1];
+           print("I'm a penguin.")
+           },
+         Darwin = {
+           md5sum = strsplit(system(sprintf("md5 %s", file), intern=TRUE), " = ")[[1]][2]
+                           print("I'm a Mac.")
+         }
+  )
+  return(md5sum)
+}
+
 get_sdrf_row <- function(vec, dat_level, dat_batch, dat_rev, disease, opt_data, file_type, center = 'hms.harvard.edu', platform){
   ## file_type <- tail(strsplit(file, "\\.")[[1]],1) #get file extension
   rowData <- opt_data[,file_type]
@@ -16,7 +32,7 @@ get_sdrf_row <- function(vec, dat_level, dat_batch, dat_rev, disease, opt_data, 
   rowData["curFile"] <- basename(unlist(vec["files"])) #the new name of the file, still to be copied over
   rowData["curArchName"] <- sprintf("%s_%s.%s.%s.%s.%s.0",center,disease,platform,dat_level,dat_batch,dat_rev)
   ## rowData["curFileMD5"] <- strsplit(grep(orgFile,md5Sums,value=TRUE)," ")[[1]][1] #to get the MD5
-  rowData["curFileMD5"] <- strsplit(system(paste("md5sum ",file,sep=""),intern=TRUE)," ")[[1]][1]
+  rowData["curFileMD5"] <- get_md5(file)
   ## tumors
   tumData <- rowData
   ## tumData["barcode"] <- strsplit(basename(file),"_")[[1]][1]

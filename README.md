@@ -25,7 +25,7 @@ center = "hms.harvard.edu"
 
 
 ## and example sample
-vec <- c(newFiles = "/IACS1/GCC/LevelIII/hms.NBICSeq/HNSC/TCGA-CN-5356-01A-01D-1431___120412_SN208_0283_AD0V1GACXX---TCGA-CN-5356-10A-01D-1431___120412_SN208_0284_BD0T51ACXX.tsv", 
+vec <- c(files = "/IACS1/GCC/LevelIII/hms.NBICSeq/HNSC/TCGA-CN-5356-01A-01D-1431___120412_SN208_0283_AD0V1GACXX---TCGA-CN-5356-10A-01D-1431___120412_SN208_0284_BD0T51ACXX.tsv", 
          NORMALSAMPLEID = "normal-tcga-barcode", NORMALSAMPLEID = "normal-tcga-barcode", 
          NORMALANALYSISUUID = "normal-cghub-uuid", TUMORANALYSISUUID = "tumor-analysis-uuid" )
 
