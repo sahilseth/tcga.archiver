@@ -6,7 +6,8 @@ Creating metadata for TCGA lowpass data
 ### Installing this package
 ```
 require(devtools)
-install_github("tcga.archiver")
+debug(RCurl:::curlPerform)
+devtools:::install_github_single(repo="tcga.archiver", username="sahilseth")
 
 ```
 
@@ -23,9 +24,11 @@ disease = 'HNSC'
 platform = "IlluminaHiSeq_DNASeqC"
 center = "hms.harvard.edu"
 
+## these are the TSV files we upload:
+tsvs = file.path(path.package("tcga.archiver"), "filesTCGA-CN-5356-01A-01D-1431___120412_SN208_0283_AD0V1GACXX---TCGA-CN-5356-10A-01D-1431___120412_SN208_0284_BD0T51ACXX.tsv")
 
 ## and example sample
-vec <- c(files = "/IACS1/GCC/LevelIII/hms.NBICSeq/HNSC/TCGA-CN-5356-01A-01D-1431___120412_SN208_0283_AD0V1GACXX---TCGA-CN-5356-10A-01D-1431___120412_SN208_0284_BD0T51ACXX.tsv", 
+vec <- c(files = tsvs, 
          NORMALSAMPLEID = "normal-tcga-barcode", NORMALSAMPLEID = "normal-tcga-barcode", 
          NORMALANALYSISUUID = "normal-cghub-uuid", TUMORANALYSISUUID = "tumor-analysis-uuid" )
 
