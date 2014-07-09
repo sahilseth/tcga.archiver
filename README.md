@@ -36,7 +36,8 @@ vec <- c(files = tsvs,
   TUMORANALYSISUUID = getCGHubStatus("TCGA-CN-5356-10A-01D-1431-02", 
     by = "legacy_sample_id", get = "both")$uuid)
 
-out <- get_sdrf_row(vec = vec, dat_level = 3 ,dat_batch = 0 ,dat_rev = 0 ,disease = disease, opt_data = opt_data,
-  file_type = file_type, platform = platform, center = center)
-
+out <- get_sdrf_row(vec = vec, disease = disease, 
+  center = center, platform = platform,
+  opt_data = opt_data, file_type = file_type,
+  dat_level = 3, dat_batch = 0, dat_rev = 0)
 ```
